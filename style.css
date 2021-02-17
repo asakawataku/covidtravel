@@ -1,0 +1,264 @@
+* img {
+box-sizing: content-box; /* パディングとボーダーを含まない */
+}
+
+
+*  {
+margin: 0px;
+padding: 0px;
+}
+
+body {
+  background-image: url( img/bgimg01.jpg );
+  background-position: center;
+  margin: 0;
+}
+
+header {
+  height: 140px;
+  background-color: white;
+
+  width: 100%;
+  z-index: 9999;
+  top:0;
+  box-sizing:border-box;
+}
+
+header h1 {
+  padding-top:10px;
+	text-align: center;
+  }
+header h1 a {
+		font-size: 0;
+	}
+
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow:hidden; //これを記述することではみ出た部分を非表示にします。
+  position: relative;
+}
+
+.absolute {
+    position: absolute;
+    position: fixed;
+    left: 1300px;
+    top: 500px;
+    z-index:9999;
+    width: 200px;
+}
+
+.box1 {
+  background-color: ;
+  box-shadow:;	/* 影をつける */
+  width:100%;
+  height: auto;
+}
+
+.box2 {
+  background-color: ;
+  box-shadow:;	/* 影をつける */
+  width:100%;
+  height: auto;
+}
+
+.box3{
+  background-color: ;
+  box-shadow:;	/* 影をつける */
+  width:100%;
+  height: auto;
+}
+
+.box4 {
+  background-color: ;
+  box-shadow:;	/* 影をつける */
+  width:100%;
+  height: auto;
+}
+
+.box5 {
+  background-color: ;
+  box-shadow: ;	/* 影をつける */
+  width:100%;
+  height: auto;
+}
+
+.box6 {
+  background-color: ;
+  box-shadow:;	/* 影をつける */
+  width:100%;
+  height: auto;
+}
+
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container　img{
+ transition:1s all;
+}
+
+.container img:hover{
+  transform:scale(1.2,1.2);
+  transition:1s all;
+}
+
+
+.container h1 {
+  color: #123456;/*文字色*/
+  /*線の種類（点線）2px 線色*/
+  border-bottom: dashed 2px #123456;
+  font-weight: 900;
+  font-size: 3rem;
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝",serif;
+      -webkit-transform-origin: 0 0;
+      -webkit-transform: scale(1, 1.01);
+      -moz-transform-origin: 0 0;
+      -moz-transform: scale(1, 1.01);
+      -ms-transform-origin: 0 0;
+      -ms-transform: scale(1, 1.02);
+      -o-transform-origin: 0 0;
+      -o-transform: scale(1, 1.01);
+      text-align: center;
+}
+
+
+.container h2{
+ position: relative;
+ color: #123456;
+ font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝",serif;
+ font-weight: 500
+ line-height: 1.4;
+ -webkit-box-reflect: below -10px -webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0) 10%,rgba(0, 0, 0, 0.6));
+ text-align: center;
+}
+
+
+
+footer {
+width: 100%;
+height: 300px;
+background-image:url();
+}
+
+footer .container li {
+  list-style:none;
+  text-align: center;
+  display: inline-block;
+}
+
+
+/*-----------------------SPmenu----------------------*/
+
+
+.mini-text{font-size:10px;}/*文字大きさ*/
+
+ul.bottom-menu {
+    position: fixed;
+    left:0;
+    bottom:0;
+    width: 100%;
+    height:45px;/*高さ*/
+    margin:0;
+    padding:0;
+    background-color:#f5f5f5;/*背景色*/
+    border-top:2px solid #808080;/*バーの上の線*/
+    border-bottom:2px solid #808080;/*バーの下の線*/
+    z-index:30;}
+
+ul.bottom-menu li {
+    float:left;
+    width:20%;
+    background-color:#f5f5f5;/*背景色*/
+    list-style-type:none;
+    text-align:center;
+    font-size:25px;/*アイコンのサイズ*/}
+
+.bottom-menu li a {
+    display: block;
+    color:#808080;/*アイコン＆文字の色*/
+    padding-top:10px;
+    padding-bottom:5px;
+    line-height:10px;
+    text-decoration:none;}
+
+.bottom-menu li a:hover {
+    color:#a9a9a9;/*マウスオーバー時の色*/}
+
+/* === 展開メニュー === */
+
+ul.menu-second-level {
+    visibility: hidden;
+    opacity: 0;
+    z-index:1;}
+
+ul.menu-second-level li a{
+    border-top:1px dashed #a9a9a9;/*展開の枠点線*/
+        font-size:15px;/*展開メニューの文字サイズ*/
+        line-height:30px;/*文字の縦幅*/}
+
+.menu-second-level li a:hover {
+    height:100%;
+    background: lightgrey;/*マウスオーバーの色*/}
+
+li.menu-width-max ul.menu-second-level {
+    position: absolute;
+    bottom: 47px;/*高さ*/
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding:0;}
+
+li.menu-width-max:hover ul.menu-second-level {
+    bottom: 47px;/*高さ*/
+    visibility: visible;
+    opacity: 1;}
+
+li.menu-width-max ul.menu-second-level li {
+    float: left;
+    width: 100%;
+    border: none;}
+
+
+/*-----------------------sp----------------------*/
+
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.pc { display: block !important; }
+.sp { display: none !important; }
+
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@media only screen and (max-width: 750px) {
+    .pc { display: none !important; }
+    .sp { display: block !important; }
+}
+
+
+@media screen and (min-width:414px) {
+    /*　画面サイズが480pxからはここを読み込む　*/
+
+
+
+}
+
+
+
+/*-----------------------js----------------------*/
+/*-画像ふわっと表示-*/
+
+.js-animation {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(40px);
+  transition: all 1s;
+}
+.js-animation.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+/*画像ふわっと表示*/

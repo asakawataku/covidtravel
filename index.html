@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device">
+<link rel="stylesheet" href="style.css" media="screen">
+<title>レイアウト基本構造</title>
+</head>
+<body>
+  <header>
+    <h1><img src="img/logo_01.png" alt="topロゴ"></h1>
+  </header>
+<div class="container">
+<h1>そうだ！旅行にいこう！</h1>
+<p>内容</p>
+<img src="img/covid_01.png" alt="写真1" class="absolute">
+
+<div class="box1">
+  <h2>この旅館について</h2>
+<img src="imgsample/img_01.jpg" alt="写真1" class="js-animation pc">
+<img src="imgsample/img_01sp.jpg" alt="写真1" class="js-animation sp">
+</div>
+
+
+<div class="box2">
+  <h2>周辺情報</h2>
+<img src="imgsample/img_02.jpg" alt="写真2" class="js-animation">
+</div>
+
+<div class="box3">
+  <h2>風景</h2>
+<img src="imgsample/img_03.jpg" alt="写真3" class="js-animation">
+</div>
+
+
+<div class="box4">
+  <h2>お食事について</h2>
+<img src="imgsample/img_04.jpg" alt="写真4" class="js-animation">
+</div>
+
+<div class="box5">
+  <h2>お問い合わせ</h2>
+<img src="imgsample/img_05.jpg" alt="写真5" class="js-animation">
+</div>
+
+<div class="box6">
+  <h2>電話番号</h2>
+<img src="imgsample/img_06.jpg" alt="写真6" class="js-animation">
+</div>
+
+</div>
+
+
+<!-- bottom navigation -->
+
+<ul class="bottom-menu">
+    <li>
+	<!--　↓↓項目1. ホーム 　＃の部分にホームのURLを入れる -->
+        <a href="#">
+	<i class="blogicon-home"></i><br><span class="mini-text">ホーム</span></a>
+    </li>
+
+    <li class="menu-width-max">
+	<!-- ↓↓項目2. おすすめ　すぐ下の"＃"はそのまま -->
+        <a href="#"><i class="blogicon-list"></i><br><span class="mini-text">おすすめ</span></a>
+
+		<ul class="menu-second-level">
+
+		<!-- 下の"#"の部分におすすめ"記事URL"とタイトル等を入れる -->
+            	<li><a href="#">タイトル１</a></li>
+           	<li><a href="#">タイトル２</a></li>
+           	<li><a href="#">タイトル３</a></li>
+            	<li><a href="#">タイトル４</a></li>
+            	<li><a href="#">タイトル５</a></li>
+        	</ul>
+    </li>
+    <li>
+	<!-- ↓↓項目3.　読者登録 ↓↓の部分の書き換えが必要です -->
+        <!--  ~hatena.ne.jp/自分のはてなID/URL(http://の部分は無し)/subscribe　-->
+ 	<a href="https://blog.hatena.ne.jp/はてなID/自分のURL/subscribe" target="_blank">
+	<i class="blogicon-hatenablog"></i><br><span class="mini-text">読者登録</span></a>
+    </li>
+    <li>
+	<!-- ↓↓項目3.　読者登録 ↓↓の部分の書き換えが必要です -->
+        <!--  ~hatena.ne.jp/自分のはてなID/URL(http://の部分は無し)/subscribe　-->
+ 	<a href="https://blog.hatena.ne.jp/はてなID/自分のURL/subscribe" target="_blank">
+	<i class="blogicon-hatenablog"></i><br><span class="mini-text">読者登録</span></a>
+    </li>
+    <li>
+	<!-- ↓↓項目4.　ツイッター ↓↓の部分の書き換えが必要です-->
+	<!-- screen_name=自分のツイッターID" ←＠マーク以降のIDを入れる -->
+        <a href="https://twitter.com/intent/follow?screen_name=自分のツイッターID">
+	<i class="blogicon-twitter"></i><br><span class="mini-text">Follow</span></a>
+    </li>
+
+</ul>
+
+<footer>
+<div class="container">
+<ul>
+<li><a href="">観光地</a></li>
+<li><a href="">グルメ</a></li>
+<li><a href="">その他の旅館</a></li>
+<li><a href="">海外情報</a></li>
+</div>
+
+  </footer>
+
+</body>
+
+<script>
+
+  /**
+   * 到達したら要素を表示させる
+   */
+  function showElementAnimation() {
+
+    var element = document.getElementsByClassName('js-animation');
+    if(!element) return; // 要素がなかったら処理をキャンセル
+
+    var showTiming = window.innerHeight > 768 ? 200 : 40; // 要素が出てくるタイミングはここで調整
+    var scrollY = window.pageYOffset;
+    var windowH = window.innerHeight;
+
+    for(var i=0;i<element.length;i++) { var elemClientRect = element[i].getBoundingClientRect(); var elemY = scrollY + elemClientRect.top; if(scrollY + windowH - showTiming > elemY) {
+        element[i].classList.add('is-show');
+      } else if(scrollY + windowH < elemY) {
+        // 上にスクロールして再度非表示にする場合はこちらを記述
+        element[i].classList.remove('is-show');
+      }
+    }
+  }
+  showElementAnimation();
+  window.addEventListener('scroll', showElementAnimation);
+
+
+
+</script>
+</html>
